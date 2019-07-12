@@ -1,0 +1,26 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Shopping List
+        link(rel="stylesheet",href="css/style.css")
+    body
+    div.container
+        nav.nav-bar
+            h2
+                a(href="/") Get The Recipe in Message
+        
+        br
+        br 
+        div
+            form(action="/getRecipe", method="POST",onSubmit="submitted" )
+                input(type="text",placeholder="Phone Number",name="number")
+                input(type="hidden",name="mytitle",value=data.recipes[0].title)
+                input(type="hidden",name="myRecipe",value=data.recipes[0].instructions)
+                input(type="submit",value="Send")
+            //- p #{data.recipes[0].title}
+            //- p #{data.recipes[0].instructions}
+        script(src="js/main.js")
+        footer
+            p &copy; 2019
